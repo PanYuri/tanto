@@ -49,17 +49,17 @@ A For security professionals, in order to give them immediate and easy access to
 Tools
 =====
 
-##from Debian
+##from Debian  
 netselect-apt  
 apt-transport-tor  
 
-###for Hashkill
+###for Hashkill  
 libssl-dev   
 libjson0-dev  
 amd-opencl-dev  
 nvidia-opencl-dev  
 
-###for everything else
+###for everything else  
 adduser  
 binutils  
 bsdutils  
@@ -119,7 +119,7 @@ vim-runtime
 wget  
 whois  
 
-##from gems
+##from gems  
 ronin (https://github.com/ronin-ruby/)  
 ronin-asm  
 ronin-dorks  
@@ -132,7 +132,7 @@ ronin-sql
 ronin-support  
 ronin-web  
 
-##from the web
+##from the web  
 hashkill (https://github.com/gat3way/hashkill/)  
 fakeap (http://www.blackalchemy.to/project/fakeap/)  
 quicksnap (https://www.soldierx.com/sxlabs/quicksnap-Customized-Automatic-Scanner-Nmap)  
@@ -529,6 +529,17 @@ Graphic design and branding: `tails/data/splash.png` what else?
 I wrote a get-wallpaper script in the rice repo for my other user, and thats the background I want to use.
 Wallaper files are in `config/chroot_local-includes/usr/share/tails`
 
+# buuf
+tilda
+guake
+
+## because I like them  
+pstree
+tree
+htop
+tilda
+
+# dragon
 
 copyleft	🄯"all wrongs reserved"  
 
