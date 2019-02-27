@@ -530,14 +530,14 @@ I wrote a get-wallpaper script in the rice repo for my other user, and thats the
 Wallaper files are in `config/chroot_local-includes/usr/share/tails`
 
 # buuf
-tilda
-guake
+yakuake
 
 ## because I like them  
 pstree
 tree
 htop
 tilda
+guake
 
 # dragon
 
@@ -545,8 +545,8 @@ copyleft	🄯"all wrongs reserved"
 
 Licenses
 ========
-[![Hacker Emblem](http://catb.org/hacker-emblem/hacker.png)](http://www.catb.org/hacker-emblem/)\
-[![Open Source](http://www.ipol.im/static/badges/open-source.png)](http://www.gnu.org/licenses/gpl.html)\
-[![Creative Commons License](http://i.creativecommons.org/l/by/4.0/80x15.png)](http://creativecommons.org/licenses/by/4.0/)\
-[![PRISM-break.org](https://f.cloud.github.com/assets/490579/1184157/1a8794f0-2240-11e3-9809-3db8577d9594.png)](http://prism-break.org)\
+[![Hacker Emblem](http://catb.org/hacker-emblem/hacker.png)](http://www.catb.org/hacker-emblem/)  
+[![Open Source](http://www.ipol.im/static/badges/open-source.png)](http://www.gnu.org/licenses/gpl.html)  
+[![Creative Commons License](http://i.creativecommons.org/l/by/4.0/80x15.png)](http://creativecommons.org/licenses/by/4.0/)  
+[![PRISM-break.org](https://f.cloud.github.com/assets/490579/1184157/1a8794f0-2240-11e3-9809-3db8577d9594.png)](http://prism-break.org)  
 [![GNU Affero GPL](https://www.gnu.org/graphics/agplv3-88x31.png)](https://www.gnu.org/licenses/agpl-3.0.en.html)
