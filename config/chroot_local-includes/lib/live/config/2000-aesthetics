@@ -1,4 +1,11 @@
 #!/bin/sh
 
 echo ""
-echo "Configuring Tails"
+echo "Configuring T.A.N.T.O."
+echo ""
+echo "The Amnesic Network Toolksit for Offense"
+echo ""
+echo "Checking dependencies..."
+echo ""
+which sdmem
+echo "sdmem - _ []"

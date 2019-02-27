@@ -1,1 +1,1 @@
-kali.chroot
+deb http://http.kali.org/kali kali-rolling main non-free contrib

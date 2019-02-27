@@ -1,1 +1,66 @@
-../../../../submodules/jenkins-tools/slaves/check_po
+#!/bin/sh
+# -*- mode: sh; sh-basic-offset: 4; indent-tabs-mode: nil; -*-
+# vim: set filetype=sh sw=4 sts=4 expandtab autoindent:
+
+# Usage: check_po.sh [LANGUAGE]
+
+set -u
+
+if ! [ -x "`which i18nspector`" ] ; then
+    echo "i18nspector: command not found"
+    echo "You need to install i18nspector first. See /contribute/l10n_tricks."
+    exit 2
+fi
+
+if [ $# -ge 1 ] ; then
+    FILE_GLOB="*.${1}.po"
+else
+    FILE_GLOB='*.po'
+fi
+
+PATTERNS_FILE="$(mktemp -t XXXXXX.patterns)"
+echo "
+boilerplate-in-date
+boilerplate-in-initial-comments
+boilerplate-in-language-team
+boilerplate-in-last-translator
+boilerplate-in-project-id-version
+codomain-error-in-plural-forms
+codomain-error-in-unused-plural-forms
+conflict-marker-in-header-entry
+fuzzy-header-entry
+incorrect-plural-forms
+invalid-content-transfer-encoding
+invalid-date
+invalid-language
+invalid-last-translator
+language-team-equal-to-last-translator
+no-language-header-field
+no-package-name-in-project-id-version
+no-plural-forms-header-field
+no-report-msgid-bugs-to-header-field
+no-version-in-project-id-version
+stray-previous-msgid
+unable-to-determine-language
+unknown-poedit-language
+unusual-plural-forms
+unusual-unused-plural-forms
+" | grep -v '^$' > "$PATTERNS_FILE"
+
+CPUS=$(egrep '^processor[[:space:]]+:' /proc/cpuinfo | wc -l)
+OUTPUT=$(find -wholename ./tmp -prune -o \( -iname "$FILE_GLOB" -print0 \) \
+                | xargs -0 --max-procs="$CPUS" --max-args=64 i18nspector \
+                | grep -v --line-regexp '' \
+                | grep -v -f "$PATTERNS_FILE")
+
+### Output and exit code
+# Our automated testing jobs depend on it, beware!
+
+if [ -z "$OUTPUT" ]; then
+    exit 0
+else
+    # Output the filtered i18nspector's output
+    echo "$OUTPUT"
+    # Exit code: 0 iff. the filtered i18nspector's output was empty
+    exit 1
+fi
