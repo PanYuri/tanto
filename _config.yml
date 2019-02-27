@@ -1,0 +1,8 @@
+title: Tanto(短刀)
+description: Tanto Linux Debian Builder Kali TAILS
+google_analytics: 
+show_downloads: true
+theme: jekyll-theme-hacker
+
+gems:
+  - jekyll-mentions
